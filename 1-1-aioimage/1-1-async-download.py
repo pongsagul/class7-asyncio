@@ -19,7 +19,7 @@ async def download_image_async(session: aiohttp.ClientSession, num: int = 1):
 async def download_images_async(n: int = 10):
     async with aiohttp.ClientSession() as session:
         tasks = [download_image_async(session, i + 1) for i in range(n)]
-        _= await asyncio.gather(*tasks)
+        _ = await asyncio.gather(*tasks)
     return
 if __name__ == "_ main_":
     tick = time.perf_counter()
